@@ -13,6 +13,52 @@
       <div class="card">
         <div class="card body">
           <h5 class="titulo">AGREGAR TARJETA</h5>
+          <!-- FORMULARIO PARA GUARDAR LOS DATOS DE LA TARJETA -->
+          <form>
+            <!-- Entradas de datos -->
+            <div class="input-group mb-3">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+              <input type="text" class="form-control" placeholder="Titular" />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">
+                <i class="fas fa-credit-card"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Numero de Tarjeta"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">
+                    <i class="fas fa-calendar-alt"></i>
+                  </span>
+                  <input type="text" class="form-control" placeholder="MM/YY" />
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">
+                    <i class="fas fa-key"></i>
+                  </span>
+                  <input type="text" class="form-control" placeholder="CVV" />
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-success btn-lg">
+                <i class="fas fa-save"></i>&nbsp; Guardar
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -24,9 +70,9 @@
           <table class="table">
             <tbody>
               <tr *ngFor="let tarjeta of listTarjetas">
-                <td>{{ tarjeta.titular}}</td>
-                <td>{{ tarjeta.numeroTarjeta}}</td>
-                <td>{{ tarjeta.fechaExpedicion}}</td>
+                <td>{{ tarjeta.titular }}</td>
+                <td>{{ tarjeta.numeroTarjeta }}</td>
+                <td>{{ tarjeta.fechaExpedicion }}</td>
                 <td><i class="far fa-edit text-info"></i></td>
                 <td><i class="far fa-trash-alt text-danger"></i></td>
               </tr>
