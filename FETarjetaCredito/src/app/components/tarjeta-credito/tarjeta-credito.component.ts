@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -11,9 +16,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './tarjeta-credito.component.css',
 })
 export class TarjetaCreditoComponent {
-  
-
-
   //array listTarjetas para mostrar datos de forma estatica
   // en el componente listado de tarjetas
   listTarjetas: any[] = [
@@ -30,14 +32,35 @@ export class TarjetaCreditoComponent {
       cvv: '321',
     },
   ];
-  //declar formulario e inicializar 
+  //declar formulario e inicializar
   form: FormGroup;
-  constructor(private fb: FormBuilder,private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService) {
     this.form = this.fb.group({
       titular: ['', Validators.required],
-      numeroTarjeta: ['',[Validators.required,Validators.minLength(16),Validators.pattern('[0-9]{16}')]],
-      fechaExpiracion: ['',[Validators.required,Validators.minLength(5),Validators.pattern('[0-9 /]{5}')]],
-      cvv: ['',[Validators.required,Validators.minLength(3),Validators.pattern('[0-9]{3}')]],
+      numeroTarjeta: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(16),
+          Validators.pattern('[0-9]{16}'),
+        ],
+      ],
+      fechaExpiracion: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern('[0-9 /]{5}'),
+        ],
+      ],
+      cvv: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.pattern('[0-9]{3}'),
+        ],
+      ],
     });
   }
   //funcion que se activa al presionar boton guardar
@@ -50,14 +73,19 @@ export class TarjetaCreditoComponent {
       cvv: this.form.get('cvv')?.value,
     };
     this.listTarjetas.push(Tarjeta);
-    this.toastr.success('La tarjeta fue registrada con exito!', 'Tarjeta Registrada!')
+    this.toastr.success(
+      'La tarjeta fue registrada con exito!',
+      'Tarjeta Registrada!'
+    );
     this.form.reset();
   }
 
-
   //
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+  eliminarTarjeta(index: number) {
+    this.listTarjetas.splice(index, 1);
+    this.toastr.error(
+      'La tarjeta fue eliminada con exito!',
+      'Tarjeta Eliminada!'
+    );
   }
-
 }

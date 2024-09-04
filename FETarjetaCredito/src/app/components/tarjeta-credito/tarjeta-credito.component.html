@@ -65,7 +65,9 @@
                     <span class="input-group-text">
                       <i
                         class="fas fa-calendar-alt"
-                        [class.green-icon]="this.form.get('fechaExpiracion')?.valid"
+                        [class.green-icon]="
+                          this.form.get('fechaExpiracion')?.valid
+                        "
                         [class.red-icon]="
                           this.form.get('fechaExpiracion')?.invalid &&
                           this.form.get('fechaExpiracion')?.touched
@@ -105,7 +107,11 @@
               </div>
 
               <div class="d-grid gap-2">
-                <button [disabled]="this.form.invalid" type="submit" class="btn btn-success btn-lg">
+                <button
+                  [disabled]="this.form.invalid"
+                  type="submit"
+                  class="btn btn-success btn-lg"
+                >
                   <i class="fas fa-save"></i>&nbsp; Guardar
                 </button>
               </div>
@@ -122,14 +128,19 @@
           <div style="margin: 10px">
             <table class="table">
               <tbody>
-                <tr *ngFor="let tarjeta of listTarjetas">
+                <tr *ngFor="let tarjeta of listTarjetas; let i = index">
                   <td>{{ tarjeta.titular }}</td>
                   <td>{{ tarjeta.numeroTarjeta }}</td>
                   <td>{{ tarjeta.fechaExpedicion }}</td>
                   <td><i class="far fa-edit text-info"></i></td>
-                  <td><i class="far fa-trash-alt text-danger"></i></td>
+                  <td>
+                    <i
+                      (click)="eliminarTarjeta(i)"
+                      class="far fa-trash-alt text-danger"
+                    ></i>
+                  </td>
                 </tr>
-                <button (click)="showSuccess()">asdf</button>
+                <!-- <button (click)="showSuccess()">asdf</button> -->
               </tbody>
             </table>
           </div>
