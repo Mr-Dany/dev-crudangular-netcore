@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tarjeta-credito',
@@ -30,10 +30,10 @@ export class TarjetaCreditoComponent {
   form: FormGroup;
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      titular: [''],
-      numeroTarjeta: [''],
-      fechaExpiracion: [''],
-      cvv: [''],
+      titular: ['', Validators.required],
+      numeroTarjeta: ['',[Validators.required,Validators.minLength(16),Validators.max(16)]],
+      fechaExpiracion: ['',[Validators.required,Validators.minLength(5),Validators.max(5)]],
+      cvv: ['',[Validators.required,Validators.minLength(3),Validators.max(3)]],
     });
   }
   //funcion que se activa al presionar boton guardar
