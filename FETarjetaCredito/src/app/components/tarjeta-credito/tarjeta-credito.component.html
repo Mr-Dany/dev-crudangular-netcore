@@ -25,13 +25,14 @@
                     class="fas fa-user"
                     [class.green-icon]="this.form.get('titular')?.valid"
                     [class.red-icon]="
-                      this.form.get('titular')?.valid &&
+                      this.form.get('titular')?.invalid &&
                       this.form.get('titular')?.touched
                     "
                   ></i>
                 </span>
                 <input
                   formControlName="titular"
+                  maxlength="16"
                   type="text"
                   class="form-control"
                   placeholder="Titular"
@@ -44,7 +45,7 @@
                     class="fas fa-credit-card"
                     [class.green-icon]="this.form.get('numeroTarjeta')?.valid"
                     [class.red-icon]="
-                      this.form.get('numeroTarjeta')?.valid &&
+                      this.form.get('numeroTarjeta')?.invalid &&
                       this.form.get('numeroTarjeta')?.touched
                     "
                   ></i>
@@ -66,7 +67,7 @@
                         class="fas fa-calendar-alt"
                         [class.green-icon]="this.form.get('fechaExpiracion')?.valid"
                         [class.red-icon]="
-                          this.form.get('fechaExpiracion')?.valid &&
+                          this.form.get('fechaExpiracion')?.invalid &&
                           this.form.get('fechaExpiracion')?.touched
                         "
                       ></i>
@@ -87,7 +88,7 @@
                         class="fas fa-key"
                         [class.green-icon]="this.form.get('cvv')?.valid"
                         [class.red-icon]="
-                          this.form.get('cvv')?.valid &&
+                          this.form.get('cvv')?.invalid &&
                           this.form.get('cvv')?.touched
                         "
                       ></i>
@@ -128,6 +129,7 @@
                   <td><i class="far fa-edit text-info"></i></td>
                   <td><i class="far fa-trash-alt text-danger"></i></td>
                 </tr>
+                <button (click)="showSuccess()">asdf</button>
               </tbody>
             </table>
           </div>
