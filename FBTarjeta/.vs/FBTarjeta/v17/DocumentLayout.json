@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|c:\\users\\user\\onedrive\\documentos\\github\\dev-crudangular-netcore\\fbtarjeta\\fbtarjeta\\models\\tarjetacredito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|solutionrelative:fbtarjeta\\models\\tarjetacredito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|c:\\users\\user\\onedrive\\documentos\\github\\dev-crudangular-netcore\\fbtarjeta\\fbtarjeta\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|solutionrelative:fbtarjeta\\aplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|c:\\users\\user\\onedrive\\documentos\\github\\dev-crudangular-netcore\\fbtarjeta\\fbtarjeta\\controllers\\tarjetacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|solutionrelative:fbtarjeta\\controllers\\tarjetacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|c:\\users\\user\\onedrive\\documentos\\github\\dev-crudangular-netcore\\fbtarjeta\\fbtarjeta\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|solutionrelative:fbtarjeta\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|c:\\users\\user\\onedrive\\documentos\\github\\dev-crudangular-netcore\\fbtarjeta\\fbtarjeta\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3BFE440B-B26E-4707-803C-BCD3A291E400}|FBTarjeta\\FBTarjeta.csproj|solutionrelative:fbtarjeta\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TarjetaCredito.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\Models\\TarjetaCredito.cs",
-              "RelativeDocumentMoniker": "FBTarjeta\\Models\\TarjetaCredito.cs",
-              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\Models\\TarjetaCredito.cs",
-              "RelativeToolTip": "FBTarjeta\\Models\\TarjetaCredito.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T03:08:23.934Z",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\appsettings.json",
+              "RelativeDocumentMoniker": "FBTarjeta\\appsettings.json",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\appsettings.json",
+              "RelativeToolTip": "FBTarjeta\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-06T03:50:27.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TarjetaController.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\Controllers\\TarjetaController.cs",
-              "RelativeDocumentMoniker": "FBTarjeta\\Controllers\\TarjetaController.cs",
-              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\Controllers\\TarjetaController.cs",
-              "RelativeToolTip": "FBTarjeta\\Controllers\\TarjetaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\Program.cs",
+              "RelativeDocumentMoniker": "FBTarjeta\\Program.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\Program.cs",
+              "RelativeToolTip": "FBTarjeta\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T03:30:38.288Z",
+              "WhenOpened": "2024-09-06T03:36:14.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\AplicationDbContext.cs",
+              "RelativeDocumentMoniker": "FBTarjeta\\AplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documentos\\GitHub\\dev-crudangular-netcore\\FBTarjeta\\FBTarjeta\\AplicationDbContext.cs",
+              "RelativeToolTip": "FBTarjeta\\AplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T03:21:00.958Z",
               "EditorCaption": ""
             }
           ]
