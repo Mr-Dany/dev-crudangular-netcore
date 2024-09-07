@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
 
 namespace FBTarjeta.Models
 {
@@ -6,14 +6,13 @@ namespace FBTarjeta.Models
     {
         
         public int Id { get; set; }
-        [Required]
-        public int Titular { get; set; }
-        [Required]
-        public int NumeroTarjeta { get; set; }
-        [Required]
-        public int FechaExpiracion { get; set; }
-        [Required]
-        public int Cvv { get; set; }
+        public required string Titular { get; set; }
+
+        public required string NumeroTarjeta { get; set; }
+
+        public required string FechaExpiracion { get; set; }
+
+        public required string Cvv { get; set; }
         //public int MyProperty { get; set; } 
     }
 }

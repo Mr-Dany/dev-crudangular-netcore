@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FBTarjeta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d5f2d93c13acaa0eaa8ac1a0852d9ff21493a9b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecddcab1d0801411fc2e937c97e2e9f9fc1beff1")]
 [assembly: System.Reflection.AssemblyProductAttribute("FBTarjeta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FBTarjeta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
