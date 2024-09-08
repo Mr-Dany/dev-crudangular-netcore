@@ -65,14 +65,55 @@ namespace FBTarjeta.Controllers
 
         // PUT api/<TarjetaController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] TarjetaCredito tarjeta)
         {
+            try
+            {
+                //sino existe retornamos NOT FOUND, sino actualizamos la tarjeta
+                if (id != tarjeta.Id) {
+                    return NotFound();
+                }
+                //actualizamos la tarjeta en el contexto 
+                //y de forma asincrona nos aseguramos de guardar los cambios 
+                _context.Update(tarjeta);
+                await _context.SaveChangesAsync();
+                // retornamos un mensaje 200 de OK con el mensaje
+                return Ok(new {message = "la tarjeta fue actualizada con exito" });
+
+            }
+            catch (Exception ex)
+            {
+                //retornamos mensaje de estado de 400 y el mensaje
+                return BadRequest(ex.Message);
+            }
         }
 
         // DELETE api/<TarjetaController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                //a la variable trjeta le asignamos el id que de forma asincrona lo obtenemos
+                var tarjeta = await _context.TarjetaCredito.FindAsync(id);
+                //si el resultado es null (sino se encontro el id) mostramos Not found
+                if (tarjeta == null )
+                {
+                    return NotFound();
+                }
+                //eliminamos la tarjeta 
+                //y de forma asincrona nos aseguramos de guardar los cambios 
+                _context.TarjetaCredito.Remove(tarjeta);
+                await _context.SaveChangesAsync();
+                // retornamos un mensaje 200 de OK con el mensaje
+                return Ok(new { message = "la tarjeta fue eliminada con exito" });
+
+            }
+            catch (Exception ex)
+            {
+                //retornamos mensaje de estado de 400 y el mensaje
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
