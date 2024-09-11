@@ -16,4 +16,9 @@ export class TarjetaService {
     //hacemos la peticion envindole la url mediante nueztra variables
     return this.http.get(this.myAppUrl + this.myApiUrl);
   }
+  //servicio para hacer peticion al backend
+  deleteTarjeta(id:number): Observable<any> {
+    //hacemos la peticion enviandole la url y el id mediante nuestras variables
+    return this.http.delete(this.myAppUrl + this.myApiUrl + id);
+  }
 }

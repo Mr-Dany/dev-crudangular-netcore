@@ -19,20 +19,7 @@ import { TarjetaService } from '../../services/tarjeta.service';
 export class TarjetaCreditoComponent {
   //array listTarjetas para mostrar datos de forma estatica
   // en el componente listado de tarjetas
-  listTarjetas: any[] = [
-    {
-      titular: 'juan perez',
-      numeroTarjeta: '25252526262',
-      fechaExpiracion: '11/23',
-      cvv: '123',
-    },
-    {
-      titular: 'miguel gonzales',
-      numeroTarjeta: '252526262',
-      fechaExiracion: '11/24',
-      cvv: '321',
-    },
-  ];
+  listTarjetas: any[] = [];
   //declar formulario e inicializar
   form: FormGroup;
   constructor(
@@ -77,6 +64,7 @@ export class TarjetaCreditoComponent {
       next: (data) => {
         console.log('Next:', data);
         // Procesar datos
+        this.listTarjetas = data
       },
       error: (error) => {
         console.error('Error:', error);
@@ -106,12 +94,28 @@ export class TarjetaCreditoComponent {
     this.form.reset();
   }
 
-  //
-  eliminarTarjeta(index: number) {
-    this.listTarjetas.splice(index, 1);
-    this.toastr.error(
-      'La tarjeta fue eliminada con exito!',
-      'Tarjeta Eliminada!'
-    );
+  //metodo pra eliminar una tarjeta mediante el id 
+  eliminarTarjeta(id: number) {
+    //this.listTarjetas.splice(index, 1);
+    this._tarjetaService.deleteTarjeta(id).subscribe({
+      next: (data) => {
+        //console.log('Next:', data);
+        // Procesar datos
+        //this.listTarjetas = data
+        this.toastr.success(
+          'La tarjeta fue eliminada con exito!',
+          'Tarjeta Eliminada!'
+        );
+      },
+      error: (error) => {
+        console.error('Error:', error);
+        // Manejar error
+      },
+      complete: () => {
+        console.log('Complete');
+        // Acciones al completar
+        this.obtenerTarjetas();
+      },
+    });
   }
 }

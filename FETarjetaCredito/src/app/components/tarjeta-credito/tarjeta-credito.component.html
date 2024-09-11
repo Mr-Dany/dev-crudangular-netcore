@@ -128,14 +128,14 @@
           <div style="margin: 10px">
             <table class="table">
               <tbody>
-                <tr *ngFor="let tarjeta of listTarjetas; let i = index">
+                <tr *ngFor="let tarjeta of listTarjetas">
                   <td>{{ tarjeta.titular }}</td>
                   <td>{{ tarjeta.numeroTarjeta }}</td>
                   <td>{{ tarjeta.fechaExpedicion }}</td>
                   <td><i class="far fa-edit text-info"></i></td>
                   <td>
                     <i
-                      (click)="eliminarTarjeta(i)"
+                      (click)="eliminarTarjeta(tarjeta.id)"
                       class="far fa-trash-alt text-danger"
                     ></i>
                   </td>
