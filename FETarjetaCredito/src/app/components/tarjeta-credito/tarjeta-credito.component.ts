@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { TarjetaService } from '../../services/tarjeta.service';
 
 @Component({
   selector: 'app-tarjeta-credito',
@@ -34,7 +35,11 @@ export class TarjetaCreditoComponent {
   ];
   //declar formulario e inicializar
   form: FormGroup;
-  constructor(private fb: FormBuilder, private toastr: ToastrService) {
+  constructor(
+    private fb: FormBuilder,
+    private toastr: ToastrService,
+    private _tarjetaService: TarjetaService
+  ) {
     this.form = this.fb.group({
       titular: ['', Validators.required],
       numeroTarjeta: [
@@ -63,6 +68,27 @@ export class TarjetaCreditoComponent {
       ],
     });
   }
+  ngOnInit(): void {
+    this.obtenerTarjetas();
+  }
+  //metodo para obtener tarjetas usando el servicio getListTarjetas
+  obtenerTarjetas() {
+    this._tarjetaService.getListTarjetas().subscribe({
+      next: (data) => {
+        console.log('Next:', data);
+        // Procesar datos
+      },
+      error: (error) => {
+        console.error('Error:', error);
+        // Manejar error
+      },
+      complete: () => {
+        console.log('Complete');
+        // Acciones al completar
+      },
+    });
+  }
+
   //funcion que se activa al presionar boton guardar
   //guarda datos que vienen del formulario en la constante Tarjeta
   agregarTarjeta() {
