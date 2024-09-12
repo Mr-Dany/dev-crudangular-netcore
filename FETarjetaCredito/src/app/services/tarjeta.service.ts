@@ -21,4 +21,8 @@ export class TarjetaService {
     //hacemos la peticion enviandole la url y el id mediante nuestras variables
     return this.http.delete(this.myAppUrl + this.myApiUrl + id);
   }
+  saveTarjeta(tarjeta:any): Observable<any> {
+    //hacemos la peticion enviandole la url y el la tarjeta a guardar mediante nuestras variables
+    return this.http.post(this.myAppUrl + this.myApiUrl, tarjeta);
+  }
 }
