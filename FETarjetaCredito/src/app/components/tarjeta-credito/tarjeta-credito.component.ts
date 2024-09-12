@@ -17,6 +17,8 @@ import { TarjetaService } from '../../services/tarjeta.service';
   styleUrl: './tarjeta-credito.component.css',
 })
 export class TarjetaCreditoComponent {
+  accion = 'Agregar';
+  id: number | undefined;
   //array listTarjetas para mostrar datos de forma estatica
   // en el componente listado de tarjetas
   listTarjetas: any[] = [];
@@ -80,39 +82,72 @@ export class TarjetaCreditoComponent {
 
   //funcion que se activa al presionar boton guardar
   //guarda datos que vienen del formulario en la constante Tarjeta
-  agregarTarjeta() {
+  guardarTarjeta() {
     const tarjeta: any = {
       titular: this.form.get('titular')?.value,
       numeroTarjeta: this.form.get('numeroTarjeta')?.value,
       fechaExpiracion: this.form.get('fechaExpiracion')?.value,
       cvv: this.form.get('cvv')?.value,
     };
-    //usamos el servicio de guardar tarjeta y enviamos la tarjeta y mostramos error o succeso
-    this._tarjetaService.saveTarjeta(tarjeta).subscribe({
-      next: (data) => {
-        console.log('Next:', data);
-        // Procesar datos
-        this.toastr.success(
-          'La tarjeta fue registrada con exito!',
-          'Tarjeta Registrada!'
-        );
-      },
-      error: (error) => {
-        console.error('Error:', error);
-        // Manejar error
-        this.toastr.error(
-          'Opss... La tarjeta no ha sido registrada!',
-          'Tarjeta NO Registrada!'
-        );
-      },
-      complete: () => {
-        console.log('Complete');
-        // Acciones al completar
-        this.obtenerTarjetas();
-        this.form.reset();
-      },
-    });
-    //this.listTarjetas.push(tarjeta);
+
+    if (this.id == undefined) {
+      //usamos el servicio de guardar tarjeta y enviamos la tarjeta y mostramos error o succeso
+      this._tarjetaService.saveTarjeta(tarjeta).subscribe({
+        next: (data) => {
+          console.log('Next:', data);
+          // Procesar datos
+          this.toastr.success(
+            'La tarjeta fue registrada con exito!',
+            'Tarjeta Registrada!'
+          );
+        },
+        error: (error) => {
+          console.error('Error:', error);
+          // Manejar error
+          this.toastr.error(
+            'Opss... La tarjeta no ha sido registrada!',
+            'Tarjeta NO Registrada!'
+          );
+        },
+        complete: () => {
+          console.log('Complete');
+          // Acciones al completar
+          this.obtenerTarjetas();
+          this.form.reset();
+        },
+      });
+      //this.listTarjetas.push(tarjeta);
+    } else {
+      //actualizar tarjeta
+      tarjeta.id = this.id;
+      //usamos el servicio de guardar tarjeta y enviamos la tarjeta y mostramos error o succeso
+      this._tarjetaService.updateTarjeta(this.id, tarjeta).subscribe({
+        next: (data) => {
+          console.log('Next:', data);
+          // Procesar datos
+          this.toastr.info(
+            'La tarjeta fue actualizada con exito!',
+            'Tarjeta Actualizada!'
+          );
+        },
+        error: (error) => {
+          console.error('Error:', error);
+          // Manejar error
+          this.toastr.error(
+            'Opss... La tarjeta no ha sido actualizada!',
+            'Tarjeta NO Actualizada!'
+          );
+        },
+        complete: () => {
+          console.log('Complete');
+          // Acciones al completar
+          this.form.reset();
+          this.accion = 'Agregar';
+          this.id = undefined;
+          this.obtenerTarjetas();
+        },
+      });
+    }
   }
 
   //metodo pra eliminar una tarjeta mediante el id
@@ -143,5 +178,16 @@ export class TarjetaCreditoComponent {
       },
     });
     //this.listTarjetas.splice(index, 1);
+  }
+
+  editarTarjeta(tarjeta: any) {
+    this.accion = 'Editar';
+    this.id = tarjeta.id;
+    this.form.patchValue({
+      titular: tarjeta.titular,
+      numeroTarjeta: tarjeta.numeroTarjeta,
+      fechaExpiracion: tarjeta.fechaExpiracion,
+      cvv: tarjeta.cvv,
+    });
   }
 }

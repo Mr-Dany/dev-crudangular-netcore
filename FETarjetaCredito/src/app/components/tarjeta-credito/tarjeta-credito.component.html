@@ -12,12 +12,12 @@
     <div class="col-lg-6">
       <div class="card">
         <div class="card body">
-          <h5 class="titulo">AGREGAR TARJETA</h5>
+          <h5 class="titulo">{{ accion | uppercase }} TARJETA</h5>
           <!-- FORMULARIO PARA GUARDAR LOS DATOS DE LA TARJETA -->
           <div style="margin: 10px">
             <!-- formgroup par decir que los valores se guarden en la variable form
             ngsubmit para guardar el formulario en la funcion agregarTarjeta -->
-            <form [formGroup]="form" (ngSubmit)="agregarTarjeta()">
+            <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
               <!-- Entradas de datos -->
               <div class="input-group mb-3">
                 <span class="input-group-text">
@@ -132,7 +132,12 @@
                   <td>{{ tarjeta.titular }}</td>
                   <td>{{ tarjeta.numeroTarjeta }}</td>
                   <td>{{ tarjeta.fechaExpedicion }}</td>
-                  <td><i class="far fa-edit text-info"></i></td>
+                  <td>
+                    <i
+                      (click)="editarTarjeta(tarjeta)"
+                      class="far fa-edit text-info"
+                    ></i>
+                  </td>
                   <td>
                     <i
                       (click)="eliminarTarjeta(tarjeta.id)"
